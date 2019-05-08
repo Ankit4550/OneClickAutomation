@@ -1,0 +1,26 @@
+- name: create containers
+  hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+  - name: ubuntu container1
+    docker_container:
+       name: container1
+       image: ubuntu
+       state: started
+       tty: true
+       detach: true
+  - name: centos container2
+    docker_container:
+       name: container2
+       image: centos
+       state: started
+       tty: true
+       detach: true
+  - name: node container3
+    docker_container:
+       name: container3
+       image: node
+       state: started
+       tty: true
+       detach: true

@@ -1,0 +1,8 @@
+- name : pull ubuntu image
+  hosts : 127.0.0.1
+  connection: local
+  become: yes
+  tasks:
+  -  name : pull
+     docker_image: 
+        name: ubuntu
